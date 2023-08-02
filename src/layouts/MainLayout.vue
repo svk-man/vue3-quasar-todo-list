@@ -1,12 +1,14 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header class="bg-primary text-white">
+    <q-header class="bg-dark text-white flex flex-center">
       <q-toolbar>
-        <q-toolbar-title>
+        <q-toolbar-title class="row flex-center">
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+            <img :src="rocket" />
           </q-avatar>
-          Title
+          <h1 class="inter-bold text-primary">
+            to<span class="text-accent">do</span>
+          </h1>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -19,12 +21,28 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import rocket from "../assets/rocket.svg";
 
 export default defineComponent({
   name: "MainLayout",
 
   setup() {
-    return {};
+    return { rocket };
   },
 });
 </script>
+
+<style lang="scss">
+.q-header {
+  min-height: 200px;
+}
+
+.q-avatar {
+  margin-right: 5px;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+</style>
